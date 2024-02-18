@@ -12,26 +12,27 @@ const Variável = (props) => { DENTRO DAS CHAVES, PODEMOS
     Aqui deve ser usado o return com chaves
   )
 }  */
+
 const Equipe = (props) => {
   return (
     <div>
-      <h1>Bem vindo atleta </h1>
-      <h2>nome : {props.nome}</h2>
-      <h2>posição : {props.posicao}</h2>
-
+      <h2>Nome do atleta: {props.nome}</h2>
+      <h2>Posição em campo: {props.posicao}</h2>
+      <h2>Nível de habilidade: {props.habilidade}</h2> 
+      <hr></hr>     
     </div>
   )
-}
 
+}
 
 //componente principal
 function app() {
   return (
     <div>
-      
-      < Equipe nome="Atleta 01" posicao="Ataque" />
-      < Equipe nome="Atleta 02" />
-      < Equipe nome="Atleta 03" />
+      <h1>Conheça sua equipe</h1>      
+      < Equipe nome="Atleta 01" posicao="Ataque" habilidade="Nível 3" />
+      < Equipe nome="Atleta 02" poisicao="Meio" habilidade="Nível 2" />
+      < Equipe nome="Atleta 03" posicao="Defesa" habilidade="Nível 1" />
 
     </div>
 
