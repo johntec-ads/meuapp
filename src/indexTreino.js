@@ -1,12 +1,26 @@
+import React from "react"
 
-
-
-function app () {
-  return(
+const Clientes = (props) => {
+  return (
     <div>
-      <h1>Conheça nossa equipe</h1>
-
-
+    <h2> {props.nome} </h2>    
+    
     </div>
   )
 }
+
+
+//function do aplicativo
+function app () {
+  //return com chaves
+  return (
+    <div>
+      <h1> Bem vindo : </h1>
+      < Clientes nome = "John" />
+
+    
+    </div>
+  )
+}
+
+export default app//nome do aplicativo react
