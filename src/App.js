@@ -1,5 +1,3 @@
-import React from "react";
-
 /* A criação de componentes deve ser efetuada com uma 
 aero function (=>), seguindo a mesma sintaxe do JS, sendo 
 reduzida quando o código estiver em apenas uma linha, do contrario
@@ -12,31 +10,38 @@ const Variável = (props) => {
     Aqui deve ser usado o return com chaves
   )
 }  */
+import React from "react"
 
-const Atletas = (props) => {
-  return (
-    <div>
-      <h3> {props.nome} </h3>
-      <h3> {props.posicao} </h3>
-      <h3> {props.habilidade} </h3>
+const Equipe = (props) => {
+  return(
+    <div>              
+      <Sobre nome  = {props.nome} cargo = {props.cargo} idade = {props.idade} />
+      <hr/>
     </div>
   )
+}
 
+const Sobre = (props) => {
+  return (
+    <div>      
+      <h3>Olá, meu nome é {props.nome}</h3>
+       <h3>Sou desenvolvedor {props.cargo}  </h3>
+       <h3>e tenho {props.idade} anos de idade.</h3>
+    
+    </div>
+  )
 }
 
 
-
-function app() {
+function app () {
   return (
-    <div>
-      <h1>Bem vindo</h1>
-      <Atletas nome = 'Jogador: John'/>      
-      <Atletas posicao = 'Posição: Meio'/>      
-      <Atletas habilidade = 'Habilidade: 3' />      
-      Olá Mundo!
-    </div>
-  );
-};
+      <div>
+        <h1></h1>
+        <Equipe nome = "John" cargo = "Front-end" idade = "48" />
+        <Sobre />
+      </div>
+  )
+}
+
 
 export default app
-
