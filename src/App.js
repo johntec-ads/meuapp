@@ -11,37 +11,49 @@ const Variável = (props) => {
   )
 }  */
 import React from "react"
-
 const Equipe = (props) => {
-  return(
-    <div>              
-      <Sobre nome  = {props.nome} cargo = {props.cargo} idade = {props.idade} />
-      <hr/>
+  return (
+    <div>
+      <Sobre nome={props.nome} cargo={props.cargo}
+        idade={props.idade} />
+      <Social goo={props.google} face= {props.facebook} />      
+    <hr/>
     </div>
   )
 }
+
+
 
 const Sobre = (props) => {
   return (
-    <div>      
-      <h3>Olá, meu nome é {props.nome}</h3>
-       <h3>Sou desenvolvedor {props.cargo}  </h3>
-       <h3>e tenho {props.idade} anos de idade.</h3>
-    
+    <div>
+      <h1> Meu nome: {props.nome} </h1>
+      <h1> Meu cargo: {props.cargo} </h1>
+      <h1> Minha idade: {props.idade} </h1>      
+    </div>
+  )
+}
+
+const Social = (props) => {
+  return (
+    <div>
+      <a href= {props.goo}>Google </a>
+      <a href= {props.face}>Facebook </a>
     </div>
   )
 }
 
 
-function app () {
+function app() {
   return (
-      <div>
-        <h1></h1>
-        <Equipe nome = "John" cargo = "Front-end" idade = "48" />
-        <Sobre />
-      </div>
+    <div>      
+      <Equipe nome="john" cargo="Front-end" idade="48" google="https://google.com"
+      facebook="https://facebook.com" />
+
+      <Equipe nome="isabel" cargo="Back-end" idade="51" google="https://google.com"
+      facebook="https://facebook.com" />
+    </div>
   )
 }
-
 
 export default app
