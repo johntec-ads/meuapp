@@ -11,8 +11,18 @@ const Variável = (props) => {
   )
 }  */
 
-import React, {Component} from "react";
+import React, { Component } from "react";
+/* import React, {Component} from 'react' */
 
+/* const Equipe = () => {
+  return (
+    <div></div>
+  )
+}
+  
+
+
+*/
 class Equipe extends Component {
   render() {
     return (
@@ -22,7 +32,7 @@ class Equipe extends Component {
 }
 
 
-function app () {
+function app() {
   return (
     <div>
       <h2> Conheça nossa equipe :) </h2>
