@@ -1,39 +1,36 @@
-
-import React, {Component} from "react";
+import React, { Component } from "react";
 
 class App extends Component {
-  constructor (props) {
+
+  constructor(props) {
+
     super(props);
     this.state = {
-      //estados no formato de objetos
-      nome: "John",
+      nome: "john",
       contador: 0
     }
-    this.aumentar = this.aumentar.bind(this);
   }
 
-  aumentar () {
-    let state = this.state;
-
-    state.contador += 1;
-
-    this.setState(state)
+  aumentar ( ) {
+    //Metodo que atualiza o valor da state.
+    this.setState( {contador: 1} )
   }
+
 
 
   render() {
     return (
       <div>
-        <h1> Contador</h1>
-        <h3>
-           <button onClick={this.aumentar} >+</button> 
-                {this.state.contador} 
-            <button>-</button> 
-        </h3>
-        
+
+        <h1> <button onClick={this.aumentar} >+</button> 
+          {this.state.contador} 
+        <button>-</button> </h1>
+
       </div>
     )
   }
 }
+
+
 
 export default App
