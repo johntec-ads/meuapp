@@ -1,34 +1,39 @@
-/* A criação de componentes deve ser efetuada com uma 
-aero function (=>), seguindo a mesma sintaxe do JS, sendo 
-reduzida quando o código estiver em apenas uma linha, do contrario
-deve ser afetuada com (arg ou props) + (=>) + ({chaves}) .
-Exemplo:
-No caso, a variável do componente, deve ser com letra Maiúscula.
-
-const Variável = (props) => {
-  return (
-    Aqui deve ser usado o return com chaves
-  )
-}  */
 
 import React, {Component} from "react";
 
-class Equipe extends Component {
+class App extends Component {
+  constructor (props) {
+    super(props);
+    this.state = {
+      //estados no formato de objetos
+      nome: "John",
+      contador: 0
+    }
+    this.aumentar = this.aumentar.bind(this);
+  }
+
+  aumentar () {
+    let state = this.state;
+
+    state.contador += 1;
+
+    this.setState(state)
+  }
+
+
   render() {
     return (
-      <h1> Nome : {this.props.nome} </h1>
+      <div>
+        <h1> Contador</h1>
+        <h3>
+           <button onClick={this.aumentar} >+</button> 
+                {this.state.contador} 
+            <button>-</button> 
+        </h3>
+        
+      </div>
     )
   }
 }
 
-
-function app () {
-  return (
-    <div>
-      <h2> Conheça nossa equipe :) </h2>
-      <Equipe nome="John" />
-    </div>
-  )
-}
-
-export default app
+export default App
