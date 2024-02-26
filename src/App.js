@@ -57,11 +57,16 @@ Importante:
 Lembre-se de não causar efeitos colaterais no render() ou no componentDidUpdate(), pois isso pode levar a problemas de performance ou comportamento inesperado.
 Se você precisar limpar recursos (como cancelar assinaturas ou tarefas assíncronas), faça isso no componentWillUnmount().
 Em resumo, o componentDidUpdate() é uma ferramenta poderosa para interagir com o DOM e executar ações específicas após atualizações em componentes React. 🚀🔄
-
-
 */
    componentDidUpdate() {
     /* console.log("Atualizando") */
+   }
+
+   
+   /* Este método retorna um booleano que indica se o React deve continuar com a renderização ou não. Se shouldComponentUpdate() retornar false, então render() será completamente ignorado até que as próximas props ou state sejam alteradas. Além disso, componentWillUpdate() e componentDidUpdate() também não serão invocados. */
+   
+   shouldComponentUpdate() {
+    
    }
 
 
