@@ -13,10 +13,10 @@ class App extends Component {
 
 
    /* Ciclos de vida dos component
-      component Did Mount; Montou
-      component Did update; Será desmontado
-      component Will Unmount; Foi atualizado
-      should component Update;deve atualizar o comp
+      component Did Mount; Foi Montado
+      component Did update; Foi atualizado
+      component Will Unmount; Sera desmontado
+      should component Update;deve atualizar o comp ?
       component Did Catch; comp pegou
      */
 
