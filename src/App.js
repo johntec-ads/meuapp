@@ -1,45 +1,24 @@
-import React, {Component} from "react";
+import React, {Component} from "react"
 
 class App extends Component {
 
-  constructor(props) {
+  constructor (props) {
     super(props);
+
     this.state = {
-      Horas: "00:00:00",
-      Id: " Cliente_001"
+      nome: "Isabel"
     }
   }
 
-  //Cicle life Componet:
-  componentDidMount() {//Montou
-    setInterval(() => {
-      this.setState( {Horas: new Date().toLocaleTimeString()} )
-      
-    }, 1000);
-  }
-
-  componentDidUpdate() {//Atualizou ?
-    console.log("Atualizando")
-  }
-
-  /* shouldComponentUpdate() {
-
-  } */
-
-
-
-  render() {
-
-    return (
-    
+  render () {
+  return (
     <div>
-      <h1> {this.state.Horas} </h1>
-      <h1>Clientes:</h1>
-        <h2> {this.state.Id} </h2>
+      <h1> Teste state {this.state.nome} </h1>
     </div>
-
-    )
-  }
+  )
 }
+
+}
+
 
 export default App;
