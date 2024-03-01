@@ -1,24 +1,17 @@
-import React, {Component} from "react"
-
+import React, {Component}  from "react"
+import Membro from "./components/Membro/Mebro";
 class App extends Component {
 
-  constructor (props) {
-    super(props);
 
-    this.state = {
-      nome: "Isabel"
-    }
+
+  render() {
+    return(
+      <div>
+        teste
+        <h3> <Membro/> </h3>
+      </div>
+    )
   }
-
-  render () {
-  return (
-    <div>
-      <h1> Teste state {this.state.nome} </h1>
-    </div>
-  )
 }
-
-}
-
 
 export default App;
