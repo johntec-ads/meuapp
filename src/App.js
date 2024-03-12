@@ -4,39 +4,47 @@ class App extends Component {
   constructor( props ) {
     super( props );
     this.state = {
-      status: false
+      status: true,
     }
 
-    this.entrar = this.entrar.bind(this);
-    this.sair = this.sair.bind(this);
+    this.falso = this.falso.bind(this);
+    this.verdade = this.verdade.bind(this);
+
   }
 
-  entrar() {
+  falso( ) {
     this.setState( {status: false} )
   }
-  sair() {
-    this.setState( {status: true} )
 
+  verdade() {
+    this.setState( {status: true} )
   }
 
   render () {
     return (
       <div>
+
         { this.state.status ?
-          <div>            
-            <h1> Olá,bem-vindo ao sistema.</h1>
-            <button onClick={this.entrar} >Off system</button>
-          </div>
-          :
           <div>
-            <h1>System off</h1>
-            <button onClick={this.sair} >Entrar sytem</button>
+            <h1> Seja  muito bem-vindo! </h1>
+            <h2> Tecle enter para mudar </h2>
+            <button onClick={this.falso}  >Enter False</button>
+            <h1> seu status é verdadeiro </h1>
+          </div> :
+          <div>
+            <h1> Tecle enter para voltar </h1>
+            <button onClick={this.verdade} >Enter Verdade</button>
+            <h1> seu status é falso </h1>
           </div>
+
         }
+
       </div>
     )
   }
 }
 
 
-export default App
+
+
+export default App;
