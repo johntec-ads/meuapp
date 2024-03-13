@@ -1,34 +1,32 @@
-import React, {  Component } from 'react';
+import React, { Component } from "react";
+import Feed from './components/feed/index'
+
 class App extends Component {
-  constructor(props) {
-    super(props);
+  constructor( props ) {
+    super( props );
     this.state = {
       feed: [
-        {id: 1, username: 'john', curtidas: 10, comentarios: 3},
-        {id: 2, username: 'isabel', curtidas: 20, comentarios: 7},
-        {id: 3, username: 'johrdan', curtidas: 47, comentarios: 17},
+        {
+          id: 1, nome: 'John', curtidas: 13, comentarios: 454
+        },
+        {
+          id: 2, nome: 'Isabel', curtidas: 53, comentarios: 1454
+        },
+        {
+          id: 3, nome: 'Johrdan', curtidas: 513, comentarios: 4454
+        },
       ]
     }
   }
 
-  render() {
-    return(
-      <div>
 
-        {this.state.feed.map((item) => {
-          return(          
-            <div key={item.id} >              
-              <h3> {item.username} </h3>          
-              <p>curtidas {item.curtidas} /comentários {item.comentarios} </p>          
-           </div>
-          )
-        })}
-        
-      </div>
+  render () {
+    return (
+       <Feed/>
+      
     )
   }
 }
 
 
-
-export default App ;
+export default App;
