@@ -14,7 +14,7 @@ class App extends Component {
         },
         {
           id: 3, nome: 'Johrdan', curtidas: 513, comentarios: 4454
-        },
+        }
       ]
     }
   }
@@ -22,8 +22,17 @@ class App extends Component {
 
   render () {
     return (
-       <Feed/>
-      
+      <div>
+        { this.state.feed.map( ( item ) => (
+          <Feed
+            key={ item.id }
+            nome={ item.nome }
+            curtidas={ item.curtidas }
+            comentarios={ item.comentarios }
+          />
+        ) ) }
+      </div>
+
     )
   }
 }

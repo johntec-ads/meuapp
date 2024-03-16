@@ -3,31 +3,15 @@ import React, { Component } from "react";
 class Feed extends Component {
   render () {
     return (
-      <div>
-        {
-          this.state.feed.map( ( item ) => {
-            return (
-              <div key= {item.id} >
-                <h2>
-                  {
-                    item.nome
-                  }
-                </h2>
-                <a>
-                  {
-                    item.curtidas
-                  } curtidas /
-                </a>
-                <a>
-                  {
-                    item.comentarios
-                  } comentários
-                </a>
-              </div>
-            )
-          } )
-        }
+      <div key={this.props.id}>
+
+        <h3>{this.props.nome}</h3>
+        <p> curtidas { this.props.curtidas} </p>
+        <p> cometários { this.props.comentarios} </p>
+        <hr/>
+
       </div>
+      
     )
   }
 
