@@ -6,9 +6,9 @@ class App extends Component {///
     this.state = {
       feed: [
         { id: 1, username: 'John', classe: '', compras: '30' },
-        { id: 1, username: 'Isabel', classe: '', compras: '20' },
-        { id: 1, username: 'Johrdan', classe: '', compras: '30' },
-        { id: 1, username: 'Pacato', classe: '', compras: '40' },
+        { id: 2, username: 'Isabel', classe: '', compras: '20' },
+        { id: 3, username: 'Johrdan', classe: '', compras: '30' },
+        { id: 4, username: 'Pacato', classe: '', compras: '40' },
       ]
 
     }
@@ -16,15 +16,22 @@ class App extends Component {///
     this.subtrair = this.subtrair.bind( this );
   }
 
-  somar = ( index ) => {
-    const newfeed = [ ...this.state.feed ];
-    newfeed[ index ].compras = String( Number( newfeed[ index ].compras ) ) + 1
+  somar = (index) => {
+    // Atualiza o estado de forma assíncrona
+    this.setState(estadoAnterior => {
+      // Cria uma cópia do array 'feed' do estado anterior
+      const newFeed = [...estadoAnterior.feed];
+      // Incrementa o valor de 'compras' para o item no índice especificado
+      newFeed[index].compras = String(Number(newFeed[index].compras) + 1);
+      // Retorna um novo objeto de estado com o 'feed' atualizado
+      return { feed: newFeed };
+    });
   };
+  
 
   subtrair = ( index ) => {
-    const newfeed = [ ...this.state.feed ];
-    newfeed[ index ].compras = String( Number( newfeed[ index ].comprar ) ) - 1
-  };
+
+  }  
 
   render () {
     return (
