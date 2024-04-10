@@ -1,19 +1,32 @@
-import React, { Component } from 'react' ;
+import React from 'react';
 
-class App extends Component {
-
-  render {
-    return (
-      <div>
-        <h1>teste</h1>
-      </div>
-    )
-  }
-
-
-
+const Cursos = (props) => {
+  return (
+    <div>
+      <h2> {props.curso} </h2>
+      <h3> Bem-vindo  </h3>
+    </div>
+  );
 }
 
 
+const Equipe = (props) => {
+  return (
+    <div>     
+     {props.nome}
+    </div>
+  )
+}
+
+
+function App () {  
+  return (
+    <div>      
+      <Cursos curso = 'React_JS' />
+      <Equipe nome='John'  />      
+      
+    </div>
+  )
+}
 
 export default App ;
