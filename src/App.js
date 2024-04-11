@@ -1,25 +1,36 @@
-import React from 'react';
+import { Component } from 'react';
 
-const Cursos = (props) => {
-  return (
-    <div>
-      <h1> Bem-vindo ao Curso</h1>
-      <h2> {props.curso} </h2>
-      <h2> {props.nome } </h2>
-    </div>
-  );
+class App extends Component {
+
+  constructor( props ) {
+    super( props );
+    this.state = {
+
+      lista: [
+        { id: 1, nome: ' John ', classificar: 'Ouro' },
+        { id: 2, nome: ' Jogador 2 ', classificar: 'Prata' },
+        { id: 3, nome: ' Jogador 3 ', classificar: 'Bronze' },
+      ]
+    }
+  }
+
+
+  render () {
+    return (
+      <div>
+        { this.state.lista.map( ( item ) => {
+          return (
+            <div>
+              {item.nome}
+            </div>
+          )
+
+        } ) }
+
+      </div>
+    )
+  }
 }
 
 
-
-
-function App () {  
-  return (
-    <div>      
-      <Cursos   curso = 'React_JS' nome='Isabel' />         
-      
-    </div>
-  )
-}
-
-export default App ;
+export default App;
