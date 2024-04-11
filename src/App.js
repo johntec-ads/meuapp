@@ -1,36 +1,36 @@
-import { Component } from 'react';
+import React, {Component} from 'react';
 
-class App extends Component {
-
-  constructor( props ) {
-    super( props );
-    this.state = {
-
-      lista: [
-        { id: 1, nome: ' John ', classificar: 'Ouro' },
-        { id: 2, nome: ' Jogador 2 ', classificar: 'Prata' },
-        { id: 3, nome: ' Jogador 3 ', classificar: 'Bronze' },
-      ]
-    }
-  }
-
-
+class Equipe extends Component {
   render () {
     return (
       <div>
-        { this.state.lista.map( ( item ) => {
-          return (
-            <div>
-              {item.nome}
-            </div>
-          )
-
-        } ) }
-
+        teste
       </div>
     )
   }
 }
 
 
-export default App;
+
+class App extends Component { 
+  
+  constructor (props) {
+    super(props);
+    this.state = {
+
+    }
+  }  
+  
+  render() {
+    return (
+      <div>
+        <Equipe/>
+      </div>
+    )
+  }
+}
+
+
+
+
+export default App ;
