@@ -1,38 +1,48 @@
 import React, { Component } from 'react';
 
 class App extends Component {
-
   constructor( props ) {
     super( props );
     this.state = {
-      lista: [
-        { id: 1, nome: 'john', idade: 48 },
-        { id: 2, nome: 'Isabel', idade: 51 },
-        { id: 3, nome: 'Jordan', idade: 28 }
-      ]
+      nome: 'John',
+      contador: 0,
     }
+
+    this.aumentar = this.aumentar.bind( this );
+    this.diminuir = this.diminuir.bind( this );
+
+  }
+
+  aumentar () {
+    let state = this.state;
+    state.contador += 1;
+
+    this.setState( this.state )
+  }
+
+  diminuir () {
+    let state = this.state;
+    state.contador -= 1;
+    this.setState( this.state )
   }
 
 
   render () {
     return (
       <div>
-        { this.state.lista.map( ( item ) => {
-          return (
-            <div key={ item.id }>
-              <p>
-                { item.nome },
-                { item.idade },
-              </p>
+        <h1> Contador </h1>
 
-            </div>
-          )
-         } ) }
+        <h2>
+          <button onClick={ this.aumentar }> + </button>
+          { this.state.contador }
+          <button onClick={ this.diminuir } > - </button>
+        </h2>
+
       </div>
     )
-
   }
 
 }
+
 
 export default App;
