@@ -1,48 +1,24 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react' ;
 
 class App extends Component {
-  constructor( props ) {
-    super( props );
+
+  constructor (props) {//ciclo de vida 1
+    super(props);
     this.state = {
-      nome: 'John',
-      contador: 0,
+      hora: '00:00:00'
+
     }
 
-    this.aumentar = this.aumentar.bind( this );
-    this.diminuir = this.diminuir.bind( this );
-
   }
 
-  aumentar () {
-    let state = this.state;
-    state.contador += 1;
+  render() {
 
-    this.setState( this.state )
-  }
-
-  diminuir () {
-    let state = this.state;
-    state.contador -= 1;
-    this.setState( this.state )
-  }
-
-
-  render () {
     return (
       <div>
-        <h1> Contador </h1>
-
-        <h2>
-          <button onClick={ this.aumentar }> + </button>
-          { this.state.contador }
-          <button onClick={ this.diminuir } > - </button>
-        </h2>
-
+        <h1> Projeto {this.state.hora} </h1>
       </div>
     )
   }
-
 }
 
-
-export default App;
+export default App ;
