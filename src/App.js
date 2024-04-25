@@ -1,24 +1,20 @@
 import React, { Component } from 'react' ;
+import Membro from './components/Membro'
 
 class App extends Component {
 
-  constructor (props) {//ciclo de vida 1
-    super(props);
-    this.state = {
-      hora: '00:00:00'
-
-    }
-
-  }
-
   render() {
 
-    return (
+    return(
+
       <div>
-        <h1> Projeto {this.state.hora} </h1>
+
+        <Membro nome='Visitante' />
+        
       </div>
     )
   }
 }
+
 
 export default App ;
