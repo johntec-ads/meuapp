@@ -1,44 +1,47 @@
-import React, { Component } from 'react';
-import Feed from './components/Feed' ;
+/* Classe-constructor-state-ArrayList-Map()-
+subpasta-OperTernário */
+import React, { Component } from 'react' ;
+import Feed from './componets/Feed'
 
 class App extends Component {
 
-  constructor( props ) {
-    super( props );
+  constructor(props) {
+    super(props);
     this.state = {
-
-      feed: [
-        { id: 1, nome: 'John', curtidas: 1, comentarios: 1 },
-        { id: 2, nome: 'Johrdan', curtidas: 20, comentarios: 6 },
-        { id: 3, nome: 'Isabel', curtidas: 16, comentarios: 7 },
-        { id: 4, nome: 'Trator', curtidas: 100, comentarios: 73 },
-        { id: 5, nome: 'Pacato', curtidas: 1000, comentarios: 83 },
+      feed : [
+        {id: 1 , name: 'John',    curtidas: 1, comentarios: 1},
+        {id: 2 , name: 'Isabel',  curtidas: 20, comentarios: 50},
+        {id: 3 , name: 'Johrdan', curtidas: 30, comentarios: 40},
+        {id: 4 , name: 'Trator',  curtidas: 40, comentarios: 30},
+        {id: 5 , name: 'Pacato',  curtidas: 50, comentarios: 20},
+        {id: 6 , name: 'Branco',  curtidas: 0, comentarios: 1},
       ]
 
     }
+  };
 
-  }
+  render() {
 
-
-  render () {
-    return (
+    return(
       <div>
+        
+        { this.state.feed.map((item) => {
+          return(
+            <div>
+              <Feed 
+                  id= {item.id}
+                  nome= {item.name}
+                  curtidas= {item.curtidas}
+                  comentarios= {item.comentarios}
+             />
+            </div>
+          )
 
-        { this.state.feed.map( ( item ) => {
-
-          return (
-            <Feed
-              id={ item.id }
-              nome={ item.nome }
-              curtidas={ item.curtidas }
-              comentarios={ item.comentarios }
-            />
-          );
-        } ) }
-
+        }) }
+        
       </div>
-    )
+    );
   }
-}
+};
 
-export default App;
+export default App ;
