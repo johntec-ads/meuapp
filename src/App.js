@@ -1,80 +1,56 @@
 import React, { Component } from 'react';
 class App extends Component {
 
-  constructor( props ) {
-    super( props );
+  constructor(props) {
+    super(props);
     this.state = {
-      senha: '',
+      nome:  '',
       email: '',
-      sexo: ''
+      senha: '',
     }
-
-    this.trocaSenha = this.trocaSenha.bind( this );
-    this.trocaEmail = this.trocaEmail.bind( this );
-    this.trocaSexo = this.trocaSexo.bind( this );
-
   }
 
-  trocaSenha ( e ) {
-    let upValue = e.target.value;
-    this.setState( { senha: upValue } );
-  }
-
-  trocaEmail ( e ) {
-    let upValue = e.target.value;
-    this.setState( { email: upValue } )
-  }
-
-  trocaSexo ( e ) {
-    let upValue = e.target.value;
-    this.setState( { sexo: upValue } )
-  }
-
-  render () {
-    return (
+  render() {
+    return(
       <div>
-        <h4> Cadastro </h4>
+          <h1>Novo Usuário</h1>
 
-        Senha :
-        <input
-          type='text'
-          name='senha'
-          value={ this.state.senha }
-          onChange={ this.trocaSenha }
-        />
+        <form>
+          Nome: 
+          <input
+                  type='text'
+                  value={this.state.nome}
+                  onChange={ (e) => this.setState({nome: e.target.value}) } 
+          />
+          <br></br>
+          Email
+          <input
+            type='email'
+            name='email'
+            value={this.state.email}
+            onChange={ (e) => this.setState({email: e.target.value}) }
+          />
+          <br></br>
+          Senha
+          <input
+            type='password'
+            name='senha'
+            value={this.state.senha}
+            onChange={ (e) => this.setState({senha: e.target.value}) }
+          />
 
-        <br></br>
-
-        Email :
-        <input
-          type='email'
-          name='email'
-          value={ this.state.email }
-          onChange={ this.trocaEmail }
-        />
-
-
-        <br></br>
-
-        Sexo :
-        <select
-          name='sexo'
-          value={ this.state.sexo }
-          onChange={ this.trocaSexo } 
-        >
-          <option value='masculino' >Masculino</option>
-          <option value='feminino' >Feminino</option>
-        </select>
+        </form>
 
         <div>
-          <h3> { this.state.senha } </h3>
-          <h3> { this.state.email } </h3>
-          <h3> { this.state.sexo } </h3>
+          <h3> {this.state.nome} </h3>
+          <h3> {this.state.email} </h3>
+          <h3> {this.state.senha} </h3>
         </div>
+
       </div>
     )
   }
 }
 
 
-export default App;
+export default App ;
