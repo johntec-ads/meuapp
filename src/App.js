@@ -7,7 +7,25 @@ class App extends Component {
       nome:  '',
       email: '',
       senha: '',
+      error: ''
     }
+
+    this.cadastrar = this.cadastrar.bind(this) ;
+
+  }
+
+  cadastrar (event) {
+    const {nome, email, senha} = this.state ;
+  
+    if( nome !== '' && email !== '' && senha !== '' ) {
+
+      alert( ` Nome: ${nome}\n E-mail: ${email}\n Senha: ${senha} ` );
+    } else {
+
+      this.setState( { error: 'Preencha os campos corretamente' } )
+    }
+
+    event.preventDefault();
   }
 
   render() {
@@ -15,7 +33,9 @@ class App extends Component {
       <div>
           <h1>Novo Usuário</h1>
 
-        <form>
+          {this.state.error && <p> {this.state.error} </p>}
+
+        <form onSubmit={this.cadastrar} >
           Nome: 
           <input
                   type='text'
@@ -38,6 +58,8 @@ class App extends Component {
             value={this.state.senha}
             onChange={ (e) => this.setState({senha: e.target.value}) }
           />
+          <br></br>
+          <button type='submit'>Cadastrar</button>
 
         </form>
 
