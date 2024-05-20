@@ -8,42 +8,47 @@ class App extends Component {
       email: '',
       senha: '',
       error: ''
-    }
-
-    this.cadastrar = this.cadastrar.bind(this) ;
+       
+     
+    }    
+    this.cadastrar = this.cadastrar.bind(this); 
 
   }
 
   cadastrar (event) {
-    const {nome, email, senha} = this.state ;
-  
-    if( nome !== '' && email !== '' && senha !== '' ) {
+    const { nome, email, senha } = this.state ;
 
-      alert( ` Nome: ${nome}\n E-mail: ${email}\n Senha: ${senha} ` );
-    } else {
+    if ( nome !== '' &&  email !== '' && senha !== '' ) {
+      
+      alert(`
+              Nome  : ${nome} \n
+              E-mail: ${email}\n
+              Senha : ${senha} `)
 
-      this.setState( { error: 'Preencha os campos corretamente' } )
+    }else {
+      this.setState({error:'Preenchimento Invalido!'})
     }
-
+    
     event.preventDefault();
-  }
+  }  
 
+  
   render() {
     return(
       <div>
           <h1>Novo Usuário</h1>
 
-          {this.state.error && <p> {this.state.error} </p>}
+          {this.state.error && <h4> {this.state.error} </h4>}        
 
         <form onSubmit={this.cadastrar} >
-          Nome: 
+          <label> Nome: </label>
           <input
                   type='text'
                   value={this.state.nome}
                   onChange={ (e) => this.setState({nome: e.target.value}) } 
           />
           <br></br>
-          Email
+          <label> Email: </label>
           <input
             type='email'
             name='email'
@@ -51,16 +56,18 @@ class App extends Component {
             onChange={ (e) => this.setState({email: e.target.value}) }
           />
           <br></br>
-          Senha
+          <label> Senha: </label>
           <input
             type='password'
             name='senha'
             value={this.state.senha}
             onChange={ (e) => this.setState({senha: e.target.value}) }
           />
-          <br></br>
-          <button type='submit'>Cadastrar</button>
 
+          <br></br>
+
+          <button type='Submit'>Cadastrar</button>
+         
         </form>
 
         <div>
