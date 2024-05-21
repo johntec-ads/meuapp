@@ -5,10 +5,10 @@ class App extends Component {
     super(props);
     this.state = {
       form: {
-        nome: 'John',
-        email: 'johntec@gmail.com',
-        senha: '123123',
-        sexo: 'masculino'
+        nome: '',
+        email: '',
+        senha: '',
+        sexo: ''
       }   
     }    
 
@@ -17,6 +17,9 @@ class App extends Component {
   }
 
   dadosForm(e) {
+    let form = this.state.form;
+    form[e.target.name] = e.target.value;
+    this.setState({form: form});
 
   }
 
@@ -26,12 +29,14 @@ class App extends Component {
       <div>
           <h1>Loguin</h1>              
 
-        <form onSubmit={this.cadastrar} >
+        
           <label> Nome: </label>
           <input
                   type='text'
+                  name='nome'
                   value={this.state.form.nome}
-                  onChange={this.dadosForm} />
+                  onChange={this.dadosForm}
+           />
           <br></br>
 
           <label> Email: </label>
@@ -39,7 +44,7 @@ class App extends Component {
             type='email'
             name='email'
             value={this.state.form.email}
-            onChange={ (e) => this.setState({email: e.target.value}) }
+            onChange={ this.dadosForm }
           />
           <br></br>
           <label> Senha: </label>
@@ -47,19 +52,18 @@ class App extends Component {
             type='password'
             name='senha'
             value={this.state.form.senha}
-            onChange={ (e) => this.setState({senha: e.target.value}) }
+            onChange={this.dadosForm}
           />
           <br></br>
 
           <label>Sexo</label>
-          <select name='sexo' value={this.state.form.sexo} onChange={this.trocaSexo} >
+          <select name='sexo' value={this.state.form.sexo} onChange={this.dadosForm} >
             <option>Masculino</option>
             <option>Feminino</option>
           </select>
 
-          <br></br>        
-         
-        </form>
+          <br></br>              
+      
 
         <div>
           <h3> {this.state.form.nome} </h3>
