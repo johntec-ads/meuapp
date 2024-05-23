@@ -37,7 +37,9 @@ class App extends Component {
     this.dadosForm = this.dadosForm.bind( this );
   }
   dadosForm ( e ) {
-    let form = this.state.form
+    let form = this.state.form;
+    form[ e.target.name ] = e.target.value;
+    this.setState( { form: form } )
 
   }
 
@@ -52,17 +54,36 @@ class App extends Component {
         </input>
         <br></br>
         <labe>E-mail : </labe>
-        <input  type='email' name='email'
-                value={this.state.form.email}
-                onChange={this.dadosForm}>                  
-       </input>
-       <br></br>
-       <labe>Senha : </labe>
-       <input type='password' name='senha'
-              value={this.state.form.senha}
-              onChange={this.dadosForm}>
-       </input>
-       
+        <input type='email' name='email'
+          value={ this.state.form.email }
+          onChange={ this.dadosForm }>
+        </input>
+        <br></br>
+        <labe>Senha : </labe>
+        <input type='password' name='senha'
+          value={ this.state.form.senha }
+          onChange={ this.dadosForm }>
+        </input>
+        <br></br>
+        <label>Sexo</label>
+
+        <select name='sexo'
+          value={ this.state.form.sexo }
+          onChange={ this.dadosForm }>
+          <option value='masculino'>Masculino</option>
+          <option value='feminino'>Feminino</option>
+        </select>
+
+        <div>
+          <p> {this.state.form.nome } </p>
+          <p> {this.state.form.email} </p>
+          <p> {this.state.form.senha} </p>
+          <p> {this.state.form.sexo} </p>
+          
+          
+         
+        </div>
+
 
 
       </div>
